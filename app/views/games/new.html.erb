@@ -1,0 +1,20 @@
+<h1>Games#new</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+<br>
+<br>
+
+<% @letters.each do |element| %>
+<p id="letters"> <%= element.capitalize %> </p>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>What is the longest word?</p>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters %>
+  <input type="text" name="answer">
+  <input type="submit" value="Ask!">
+</form>
